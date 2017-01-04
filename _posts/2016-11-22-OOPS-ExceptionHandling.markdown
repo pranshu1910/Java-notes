@@ -68,7 +68,7 @@ Note :
 statement in which exception occurred are not executed
 > * For each try block there can be zero or more catch blocks, but only one finally block.
 
- ## Unchecked Exception :
+## Unchecked Exception :
  These are exceptional conditions that might occur at
  runtime but we don’t expect them to occur while writing code. These usually
  indicate programming bugs, such as logic errors or improper use of an API.
