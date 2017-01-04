@@ -116,7 +116,7 @@ This function calls itself till n becomes 0, so there the amount of space requir
 
  Since the value in the braces remain a constant, we say that the space complexity of this is directly proportional to N.
 
-![](Java-notes/images/complexity1.png)
+![time complexity](Java-notes/images/complexity1.PNG)
 
 {% include image.html url="/images/complexity1.PNG" description="Complexity Analysis." %}
 
