@@ -115,7 +115,9 @@ This function calls itself till n becomes 0, so there the amount of space requir
 > nx{sizeof(a)+sizeof(n)+sizeof(a[n])}
 
  Since the value in the braces remain a constant, we say that the space complexity of this is directly proportional to N.
-![](images/complexity1.PNG)
+
+![](images/complexity1.png)
+
 {% include image.html url="/images/complexity1.PNG" description="Complexity Analysis." %}
 
 {% include image.html url="/images/timecomplexity_2.gif" description="Complexity Analysis of different Sortings." %}
