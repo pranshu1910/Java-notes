@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "Trees "
+date:   2016-10-11 06:08:02 +0530
+---
+### Generic Tree
+{% include image.html url="/images/generic_tree_1.bmp" description="" %}
+
+
+## Important Terms
+
+{% include image.html url="/images/tree_3.jpg" description="" %}
+> **Path** − Path refers to the sequence of nodes along the edges of a tree.
+
+> **Root** − The node at the top of the tree is called root. There is only one root per tree and one path from the root node to any node.
+
+> **Parent** − Any node except the root node has one edge upward to a node called parent.
+
+> **Child** − The node below a given node connected by its edge downward is called its child node.
+
+> **Leaf** − The node which does not have any child node is called the leaf node.
+
+> **Subtree** − Subtree represents the descendants of a node.
+
+> **Visiting** − Visiting refers to checking the value of a node when control is on the node.
+
+> **Traversing** − Traversing means passing through nodes in a specific order.
+
+> **Levels** − Level of a node represents the generation of a node. If the root node is at level 0, then its next child node is at level 1, its grandchild is at level 2, and so on.
+
+> **keys** − Key represents a value of a node based on which a search operation is to be carried out for a node.
+
+### Binary Tree
+A binary tree is one in which each node has at most two descendants - a node can have just one but it can't have more than two. Clearly each node in a binary tree can have a left and/or a right descendant.
+{% include image.html url="/images/tree_2.png" description="" %}
+
+~~~java
+public class BinaryTreeNode<T> {
+	T data;
+	BinaryTreeNode<T> left;
+	BinaryTreeNode<T> right;
+
+	public BinaryTreeNode(T data) {
+		this.data = data;
+	}
+}
+~~~
+### Print Tree
+~~~java
+public static void printTree(BinaryTreeNode<Integer> root) {
+  if (root == null) {
+    return;
+  }
+  printTree(root.left);
+  System.out.print(root.data + " ");
+  printTree(root.right);
+}
+~~~
+### Height in BinaryTree
+~~~java
+public static int height(BinaryTreeNode<Integer> root) {
+  return root == null ? 0 : Math.max(height(root.left), height(root.right)) + 1;
+}
+~~~
+### Search in BinaryTree
+~~~java
+public static BinaryTreeNode<Integer> search(BinaryTreeNode<Integer> root, Integer data) {
+  if (root == null) {
+    return null;
+  }
+  if (root.data.equals(data)) {
+    return root;
+  }
+  BinaryTreeNode<Integer> result = search(root.left, data);
+  if (result == null) {
+    result = search(root.right, data);
+  }
+  return result;
+}
+~~~
