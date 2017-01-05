@@ -120,5 +120,22 @@ To remove any Node from the list, we need to do the following :
 > 1) If the Node to be deleted is the first node, then simply set the Next pointer of the Head to point to the next element from the Node to be deleted.<br/>
 2) If the Node is in the middle somewhere, then find the Node before it, and make the Node before it point to the Node next to it.
 Find a node containing "key" and delete it.
+```java
+public static<T> LinkedListNode<T> deleteNode(LinkedListNode<T> head , T n){
+		if(head.data == n){
+			head = head.next;
+			return head;
+		}
+		node<T> temp = head;
+		node<T> tempPre = head;
+		while(temp!=null && temp.data != n){
+			tempPre = temp;
+			temp = temp.next;
+		}
+		tempPre.next = temp.next;
+		return head;
+	}
+```
+
 
 {% include image.html url="/images/sll_delete_after.png" description="Linked List Types" %}

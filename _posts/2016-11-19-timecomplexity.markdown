@@ -112,7 +112,7 @@ When the function calls itself there are 3 things that are stored in the stack.
 * The value at the last index a[n].
 
 This function calls itself till n becomes 0, so there the amount of space required to store these values is n times the space required to store these values once, i.e.,
-> nx{sizeof(a)+sizeof(n)+sizeof(a[n])}
+> n*{sizeof(a)+sizeof(n)+sizeof(a[n])}
 
  Since the value in the braces remain a constant, we say that the space complexity of this is directly proportional to N.
 

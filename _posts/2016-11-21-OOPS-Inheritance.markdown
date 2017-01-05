@@ -159,3 +159,68 @@ When we write
 ```
 this means that only those parameters are allowed who have implemented Comparable Interface.
 > CompareTo() compares this object with the specified object for order. Returns a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+
+# Java ArrayList class
+
+* Java ArrayList class uses a dynamic array for storing the elements.It extends AbstractList class and implements List interface. <br/>
+* Java ArrayList class can contain duplicate elements.<br/>
+* Java ArrayList class maintains insertion order.
+* Java ArrayList class is non synchronized.
+* Java ArrayList allows random access because array works at the index basis.
+* In Java ArrayList class, manipulation is slow because a lot of shifting needs to be occurred if any element is removed from the array list.
+
+#### Java Non-generic Vs Generic Collection
+
+Java collection framework was non-generic before JDK 1.5. Since 1.5, it is generic.
+
+Java new generic collection allows you to have only one type of object in collection. Now it is type safe so typecasting is not required at run time.
+
+Let's see the old non-generic example of creating java collection.
+```java
+ArrayList al=new ArrayList();//creating old non-generic arraylist
+```
+Let's see the new generic example of creating java collection.
+```java
+ArrayList<String> al=new ArrayList<String>();//creating new generic arraylist  
+```
+In generic collection, we specify the type in angular braces. Now ArrayList is forced to have only specified type of objects in it. If you try to add another type of object, it gives compile time error.
+
+Example of Java ArrayList class
+```java
+import java.util.*;  
+class TestCollection1{  
+ public static void main(String args[]){  
+
+  ArrayList<String> al=new ArrayList<String>();//creating arraylist  
+  al.add("Ravi");//adding object in arraylist  
+  al.add("Vijay");  
+  al.add("Ravi");  
+  al.add("Ajay");  
+
+  Iterator itr=al.iterator();//getting Iterator from arraylist to traverse elements  
+  while(itr.hasNext()){  
+   System.out.println(itr.next());  
+  }  
+ }
+}
+Output:
+Ravi
+Vijay
+Ravi
+Ajay  
+```
+### Important methods of ArrayList
+#### void add(int index, Object element)
+> Inserts the specified element at the specified position index in this list. Throws IndexOutOfBoundsException if the specified index is out of range (index < 0 || index > size()).
+
+#### boolean contains(Object o)
+> Returns true if this list contains the specified element. More formally, returns true if and only if this list contains at least one element e such that (o==null ? e==null : o.equals(e)).
+
+#### 	int indexOf(Object o)
+> Returns the index in this list of the first occurrence of the specified element, or -1 if the List does not contain this element.
+
+#### Object get(int index)
+> Returns the element at the specified position in this list. Throws IndexOutOfBoundsException if the specified index is out of range (index < 0 || index >= size()).
+
+#### Object remove(int index)
+> Removes the element at the specified position in this list. Throws IndexOutOfBoundsException if the index out is of range (index < 0 || index >= size()).
