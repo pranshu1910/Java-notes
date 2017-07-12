@@ -56,7 +56,7 @@ Str.hashCode(); // s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1] = 96354
 > To generate the hash value, we have to implement hashCode method for the key.
 Get the index value from hashCode.
 
-![alt text](https://drive.google.com/open?id=0B9VBOCIhdCVZRzFWMXBld3lOSUE)
+![alt text]( https://github.com/pranshu1910/Java-notes/blob/master/hashmap.gif )
 
 ### Custom HashMap class :
 
@@ -152,7 +152,8 @@ key : hello , Value : 1
 ```
 
 #### Key points :
-> 1. If two objects are same i.e. Obj1.equals(Obj2) is true then Obj1 and Obj2 **will have same hashcode**.
+
+>1. If two objects are same i.e. Obj1.equals(Obj2) is true then Obj1 and Obj2 **will have same hashcode**.
 * It is not necessary for two different objects to have two different hashcode. Example "Aa" and "BB" will have same hashcode.
 * Hashcode of the key is used to locate the bucket and then equals() is used to check if key matches the required key.
 * hm.put("AA",10) and now if we write hm.put("AA",20) then the **value will be updated to 20**. (This is not a collision as "AA" is ponting to same bucket)
